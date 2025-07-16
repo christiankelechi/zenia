@@ -125,8 +125,8 @@ class MessagePromptViewset(viewsets.ModelViewSet):
             
                     
                     return Response({"status":False,"message":"Your desired shape created successfully",'data':{"stl_url":None,"status":False,"message":"Assets not found"}},status=status.HTTP_404_NOT_FOUND)
-        except:
-            return Response({"status":False,"message":"Internal server error , check your network and try again",'data':{"stl_url":None,}},status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({"status":False,"message":f"{e}Internal server error , check your network and try again",'data':{"stl_url":None,}},status=status.HTTP_404_NOT_FOUND)
             
             
         return Response({"status":True,"message":"Your desired shape created successfully"},status=status.HTTP_200_OK)

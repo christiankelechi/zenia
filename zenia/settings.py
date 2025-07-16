@@ -99,11 +99,11 @@ WSGI_APPLICATION = "zenia.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zeniadb',
-        'USER': 'zeniadbuser',
+        'NAME': 'zenniadb',
+        'USER': 'zenniadbuser',
         'PASSWORD': 'APPLEmatch24!',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
@@ -186,6 +186,9 @@ DJOSER = {
         'token_create': 'apps.accounts.serializers.CustomTokenCreateSerializer',
     },
 }
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
 CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:3000",

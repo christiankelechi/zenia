@@ -27,14 +27,15 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Zenia App Api",
       default_version='v1',
-      description="Zenia App Ai Model Documentation, make sure to abide to terms and conditions of using these Api",
+      description="Xpresscad App Ai Model Documentation, make sure to abide to terms and conditions of using these Api",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="kezechristian@gmail.com"),
-      license=openapi.License(name="zenia licence"),
+      license=openapi.License(name="xpresscad licence"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
-   authentication_classes=[]
+   authentication_classes=[],
+   url="https://zeniaapi.duckdns.org/api/docs/"
 )
 
 urlpatterns = [
