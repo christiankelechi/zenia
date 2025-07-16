@@ -138,18 +138,18 @@ class RegisterViewSet(viewsets.ModelViewSet):
                 message = f"""
                 Dear {serializer.validated_data['username']},
     Congratulations on signing up for Xpresscad, the revolutionary AI-powered CAD modeling tool We're thrilled to have you on board and can't wait for you to experience all that Xpresscad has to offer.
-    Xpresscad is more than just a typical CAD software - it's a cutting-edge tool that uses voice feedback to guide you through the creation and modification of 3D models. With Zenia, you'll enjoy the following incredible features:
+    Xpresscad is more than just a typical CAD software - it's a cutting-edge tool that uses voice feedback to guide you through the creation and modification of 3D models. With Xpresscad, you'll enjoy the following incredible features:
     Real-Time Voice Feedback
     Xpresscad's AI-powered algorithms provide real-time audio feedback, guiding you through the creation and modification of 3D models. This ensures that your designs are accurate and precise.
     Advanced Shape Creation and Modification
-    Create basic geometric shapes like spheres, cubes, rectangular boxes, and cones. Perform advanced modifications such as cutting holes, changing hole shapes, creating chamfers, rounding edges, and shelling out material. Zenia's AI provides feedback similar to PTC Creo’s features, facilitating a seamless and intuitive design process.
+    Create basic geometric shapes like spheres, cubes, rectangular boxes, and cones. Perform advanced modifications such as cutting holes, changing hole shapes, creating chamfers, rounding edges, and shelling out material. Xpresscad's AI provides feedback similar to PTC Creo’s features, facilitating a seamless and intuitive design process.
     User-Friendly Interface
     Xpresscad offers a user-friendly interface that supports voice commands for all operations. This makes it easy to create and modify 3D models without the need for complex keyboard and mouse commands.
     High Precision and Accuracy
     Xpresscad ensures high precision and accuracy in model creation and modifications, helping you achieve the exact designs you envision.
     We're confident that Xpresscad will revolutionize your CAD experience and help you create stunning 3D designs. Get ready to experience the future of CAD modeling!
     If you have any questions or need assistance getting started, please don't hesitate to reach out to our friendly support team. We're here to help you every step of the way.
-    Welcome to the Zenia family - let's get designing!
+    Welcome to the Xpresscad family - let's get designing!
     Best regards,
     Codeblaze Xpress
     Xpresscad Corporation
