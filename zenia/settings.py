@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-s$o9%q5_x@22o&$3v5cc%^gmd#9=ejdfu5q-b_p=y+&9&2_gm8
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['.applematch.com','198.7.121.174','*']
+ALLOWED_HOSTS = ['.applematch.com','198.7.121.174','zeniaapi.duckdns.org','*']
 
 
 # Application definition
@@ -98,9 +98,9 @@ WSGI_APPLICATION = "zenia.wsgi.application"
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zenniadb',
-        'USER': 'zenniadbuser',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'zeniadb',
+        'USER': 'zeniadbuser',
         'PASSWORD': 'APPLEmatch24!',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -190,6 +190,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 USE_X_FORWARDED_HOST = True
 
 CORS_ALLOW_ALL_ORIGINS = True
+# Trust CSRF for public domain
+CSRF_TRUSTED_ORIGINS = [
+    'https://zeniaapi.duckdns.org',
+    'http://zeniaapi.duckdns.org',
+]
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:3000",
 #     "http://127.0.0.1:3000",

@@ -5,3 +5,4 @@ django-extensions
 scripts
 Transformers-for-NLP-and-Computer-Vision-3rd-Edition
 nohup.out
+.env

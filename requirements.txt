@@ -33,5 +33,6 @@ cadquery
 setuptools
 cadquery-ocp
 numpy==1.26.4
-psycopg2_binary
+psycopg2-binary
+
 kittycad
