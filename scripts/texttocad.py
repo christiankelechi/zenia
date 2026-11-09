@@ -1,36 +1,3 @@
-# import os
-# from typing import Optional, Union
-
-# from kittycad.api.ai import create_text_to_cad
-# from kittycad.client import ClientFromEnv
-# from kittycad.models import Error, TextToCad
-# from kittycad.models.file_export_format import FileExportFormat
-# from kittycad.models.text_to_cad_create_body import TextToCadCreateBody
-
-# def example_create_text_to_cad():
-#     # Set the API key in the environment variable
-#     os.environ['KITTYCAD_API_TOKEN'] = 'e1346dac-1411-44e3-adfc-a2f37a5fdbaf'
-
-#     # Create our client.
-#     client = ClientFromEnv()
-
-#     result: Optional[Union[TextToCad, Error]] = create_text_to_cad.sync(
-#         client=client,
-#         output_format=FileExportFormat.STL,
-#         body=TextToCadCreateBody(
-#             prompt="create a 3d of electrical kettle with red color",
-#         ),
-#     )
-
-#     if isinstance(result, Error) or result is None:
-#         print(result)
-#         raise Exception("Error in response")
-
-#     body: TextToCad = result
-#     print(body)
-
-# # Call the function to test
-# example_create_text_to_cad()
 import os
 from typing import Optional, Union
 
@@ -41,8 +8,12 @@ from kittycad.models.file_export_format import FileExportFormat
 from kittycad.models.text_to_cad_create_body import TextToCadCreateBody
 
 def example_create_text_to_cad():
-    # Set the API key in the environment variable
-    os.environ['KITTYCAD_API_TOKEN'] = 'e1346dac-1411-44e3-adfc-a2f37a5fdbaf'
+    # Read the API key from environment variable
+    # Set KITTYCAD_API_TOKEN in your environment or .env
+    token = os.environ.get('KITTYCAD_API_TOKEN', '')
+    if not token:
+        print("Please set the KITTYCAD_API_TOKEN environment variable.")
+        return
 
     # Create our client.
     client = ClientFromEnv()

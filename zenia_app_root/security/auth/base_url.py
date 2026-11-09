@@ -1,1 +1,3 @@
-url="http://198.7.121.174:4321/"
+import os
+
+url = os.environ.get("BASE_API_URL", "http://127.0.0.1:8000/")
