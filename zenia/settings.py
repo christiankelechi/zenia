@@ -20,13 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-s$o9%q5_x@22o&$3v5cc%^gmd#9=ejdfu5q-b_p=y+&9&2_gm8"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-default-dev-key-change-in-production")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+DEBUG = os.environ.get("DEBUG", "True").lower() in ("true", "1")
 
-ALLOWED_HOSTS = ['.applematch.com','198.7.121.174','zeniaapi.duckdns.org','*']
+ALLOWED_HOSTS = [h.strip() for h in os.environ.get("ALLOWED_HOSTS", "*").split(",") if h.strip()]
 
 
 # Application definition
@@ -90,22 +89,13 @@ WSGI_APPLICATION = "zenia.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'zeniadb',
-        'USER': 'zeniadbuser',
-        'PASSWORD': 'APPLEmatch24!',
-        'HOST': 'localhost',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -168,8 +158,8 @@ REST_FRAMEWORK = {
     ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Blankexchange API',
-    'DESCRIPTION': 'Blankexchange Documentation',
+    'TITLE': 'Zenia API',
+    'DESCRIPTION': 'Zenia Documentation',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     # OTHER SETTINGS
@@ -190,19 +180,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 USE_X_FORWARDED_HOST = True
 
 CORS_ALLOW_ALL_ORIGINS = True
-# Trust CSRF for public domain
-CSRF_TRUSTED_ORIGINS = [
-    'https://zeniaapi.duckdns.org',
-    'http://zeniaapi.duckdns.org',
-]
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-#     "https://react-ts.csb.app",
-#     "https://cbastudyapp.com",
-#     "https://www.cbastudyapp.com",
-#     'http://127.0.0.1:5500',
-#     'http://localhost:8000'
+# CSRF Trusted Origins from environment (comma-separated URLs)
+csrf_trusted_env = os.environ.get("CSRF_TRUSTED_ORIGINS", "")
+CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in csrf_trusted_env.split(",") if origin.strip()] if csrf_trusted_env else []
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # new
 SITE_ID = 1 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

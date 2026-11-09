@@ -8,3 +8,4 @@ router.register(r'voice/record',voice_recognition.VoiceRecognitionViewset,basena
 urlpatterns=[
     *router.urls
 ]
+

@@ -1,5 +1,5 @@
 """
-URL configuration for blankexchange project.
+URL configuration for zenia project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -25,17 +25,15 @@ from django.urls import path,re_path,include
 from zenia_app_root.geometries_management.viewsets.cube import CubeViewset
 schema_view = get_schema_view(
    openapi.Info(
-      title="Zenia App Api",
+      title="Zenia App API",
       default_version='v1',
-      description="Xpresscad App Ai Model Documentation, make sure to abide to terms and conditions of using these Api",
+      description="Zenia App AI CAD Model Documentation",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="kezechristian@gmail.com"),
-      license=openapi.License(name="xpresscad licence"),
+      license=openapi.License(name="MIT License"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
    authentication_classes=[],
-   url="https://zeniaapi.duckdns.org/api/docs/"
 )
 
 urlpatterns = [

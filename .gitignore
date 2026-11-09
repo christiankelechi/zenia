@@ -1,8 +1,63 @@
-Anaconda3-2024.02-1-Linux-x86_64.sh
-venv
-threedmodels
-django-extensions
-scripts
-Transformers-for-NLP-and-Computer-Vision-3rd-Edition
-nohup.out
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment variables and secrets
 .env
+.env.*
+*.key
+*.crt
+*.pem
+kittykey.txt
+certfile.key
+certfile.crt
+
+# Logs and databases
+*.log
+nohup.out
+*.sqlite3-journal
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Project specific ignores
+Anaconda3-2024.02-1-Linux-x86_64.sh
+threedmodels
+Transformers-for-NLP-and-Computer-Vision-3rd-Edition
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

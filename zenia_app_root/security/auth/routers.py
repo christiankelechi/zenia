@@ -9,7 +9,6 @@ router.register(r'login',LoginViewSet,basename='login'),
 
 
 
-
 urlpatterns=[
     *router.urls
 ]

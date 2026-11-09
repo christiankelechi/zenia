@@ -114,19 +114,6 @@ class RegisterViewSet(viewsets.ModelViewSet):
                 #     unassigned_keys.save()
 
                 #     OpenAiUserModel.objects.create(user=user,custom_user_key_id=unassigned_keys.custom_user_key_id,open_ai_key=open_api_key,time_of_assiging=timezone.now())
-                # User.objects.get(email=request.user.email).is_active=False
-                # import resend
-                # resend.api_key = "re_QPQ9uUgC_AQgi1DuGsDWDMTxxUyo88XPi"
-                # from core_app_root.security.base_url import main_url
-                # from core_app_root.security import base_url
-                # full_url=main_url+self.generate_random_link()
-                
-                # r = resend.Emails.send({
-                # "from": "send@christiankelechieze.com",
-                # "to": f"{email}",
-                # "subject": "Account Verification",
-                # "html": f"""<p>Congrats on Signing up <strong> with Codeblaze Academy</strong> click this link <a href="{base_url.main_url}account/verify/{email}/">{self.generate_random_link()}</a> to verify your account </p>"""
-                # })
                 import random
                 activation_code=random.randint(1000, 9999)
                 # import smtplib
@@ -137,28 +124,28 @@ class RegisterViewSet(viewsets.ModelViewSet):
                 
                 message = f"""
                 Dear {serializer.validated_data['username']},
-    Congratulations on signing up for Xpresscad, the revolutionary AI-powered CAD modeling tool We're thrilled to have you on board and can't wait for you to experience all that Xpresscad has to offer.
-    Xpresscad is more than just a typical CAD software - it's a cutting-edge tool that uses voice feedback to guide you through the creation and modification of 3D models. With Xpresscad, you'll enjoy the following incredible features:
+    Congratulations on signing up for Zenia, the revolutionary AI-powered CAD modeling tool! We're thrilled to have you on board and can't wait for you to experience all that Zenia has to offer.
+    Zenia is more than just a typical CAD software - it's a cutting-edge tool that uses voice feedback to guide you through the creation and modification of 3D models. With Zenia, you'll enjoy the following incredible features:
     Real-Time Voice Feedback
-    Xpresscad's AI-powered algorithms provide real-time audio feedback, guiding you through the creation and modification of 3D models. This ensures that your designs are accurate and precise.
+    Zenia's AI-powered algorithms provide real-time audio feedback, guiding you through the creation and modification of 3D models. This ensures that your designs are accurate and precise.
     Advanced Shape Creation and Modification
-    Create basic geometric shapes like spheres, cubes, rectangular boxes, and cones. Perform advanced modifications such as cutting holes, changing hole shapes, creating chamfers, rounding edges, and shelling out material. Xpresscad's AI provides feedback similar to PTC Creo’s features, facilitating a seamless and intuitive design process.
+    Create basic geometric shapes like spheres, cubes, rectangular boxes, and cones. Perform advanced modifications such as cutting holes, changing hole shapes, creating chamfers, rounding edges, and shelling out material. Zenia's AI provides feedback similar to PTC Creo’s features, facilitating a seamless and intuitive design process.
     User-Friendly Interface
-    Xpresscad offers a user-friendly interface that supports voice commands for all operations. This makes it easy to create and modify 3D models without the need for complex keyboard and mouse commands.
+    Zenia offers a user-friendly interface that supports voice commands for all operations. This makes it easy to create and modify 3D models without the need for complex keyboard and mouse commands.
     High Precision and Accuracy
-    Xpresscad ensures high precision and accuracy in model creation and modifications, helping you achieve the exact designs you envision.
-    We're confident that Xpresscad will revolutionize your CAD experience and help you create stunning 3D designs. Get ready to experience the future of CAD modeling!
+    Zenia ensures high precision and accuracy in model creation and modifications, helping you achieve the exact designs you envision.
+    We're confident that Zenia will revolutionize your CAD experience and help you create stunning 3D designs. Get ready to experience the future of CAD modeling!
     If you have any questions or need assistance getting started, please don't hesitate to reach out to our friendly support team. We're here to help you every step of the way.
-    Welcome to the Xpresscad family - let's get designing!
+    Welcome to the Zenia family - let's get designing!
     Best regards,
-    Codeblaze Xpress
-    Xpresscad Corporation
+    Zenia Team
+    Zenia Corporation
                 
                 """
                                     
                 receiver_email = email
                 subject = "Account Activation Code"
-                # body = f"Enter the four digit code sent to you here in your Blanc Exchange application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
+                # body = f"Enter the four digit code sent to you here in your Zenia application to continue with account registration completion   {activation_code} , you can copy and paste the activation code"
                 mail_body={
                     "userEmail":receiver_email,
                     "text":message,
